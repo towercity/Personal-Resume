@@ -80,7 +80,8 @@ var projects = {
 	{
 		"title" : "Work Portfolio",
 		"dates" : 2016,
-		"description" : "Portfolio of audio experience"
+		"description" : "Portfolio of audio experience",
+		"images" : ["images/project01.png", "images/project02.png"]
 	}
 	]
 };
@@ -108,9 +109,13 @@ projects.display = function() {
 		$(".project-entry:last").append(
 			HTMLprojectTitle.replace("%data%", projects.projects[project].title) +
 			HTMLprojectDates.replace("%data%", projects.projects[project].dates) +
-			HTMLprojectDescription.replace("%data%", projects.projects[project].description) +
-			HTMLprojectImage.replace("%data%", projects.projects[project].image)
+			HTMLprojectDescription.replace("%data%", projects.projects[project].description)
 		);
+		if (projects.projects[project].images.length > 0) {
+			for (image in projects.projects[project].images) {
+				$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[project].images[image]));
+			}
+		}
 	}
 };
 
