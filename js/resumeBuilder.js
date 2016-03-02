@@ -57,7 +57,7 @@ var education = {
 	"schools" : [
 		{
 		"name" : "Florida State University",
-		"city" : "Tallahassee, FL",
+		"location" : "Tallahassee, FL",
 		"major" : "Creative Writing",
 		"minor" : "Film Studies",
 		"graduation" : 2013,
@@ -150,6 +150,9 @@ if (bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
 };
 $("#header").append(formattedSkills);
+
+//Map
+$("#mapDiv").append(googleMap);
 
 //Function calls
 work.display();
