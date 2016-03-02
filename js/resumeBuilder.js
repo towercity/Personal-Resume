@@ -60,7 +60,7 @@ var education = {
 		"location" : "Tallahassee, FL",
 		"major" : "Creative Writing",
 		"minor" : "Film Studies",
-		"graduation" : 2013,
+		"dates" : 2013,
 		"years" : 4
 		}
 	],
