@@ -14,6 +14,10 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  background-color: #d4d8ca;
+}
+
 .clear-fix {
   overflow: auto;
 }
@@ -26,7 +30,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #372616;
   line-height: 48px;
   display: inline;
 }
@@ -34,7 +38,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #372616;
   line-height: 29px;
   padding: 10px;
 }
@@ -42,14 +46,14 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #372616;
   line-height: 22px;
 }
 
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #4a4a4a;
+  color: #372616;
   line-height: 17px;
 }
 
@@ -86,7 +90,7 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #a6d8de;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -100,36 +104,40 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #372616;
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
+.dark {
+  background-color: #372616;
 }
 
-.orange-text {
-  color: #f5ae23;
+.dark-text {
+  color: #372616;
+}
+
+.white{
+  background-color: #fffffd;
 }
 
 .white-text {
   font-weight: bold;
-  color: #fff;
+  color: #fffffd;
 }
 
-.gray {
-  background-color: #f3f3f3;
+.tan {
+  background-color: #fffcea;
   padding-bottom: 10px;
   clear:both;
 }
 
-.dark-gray {
-  background-color: #4a4a4a;
+.green {
+  background-color: #8aa191;
 }
 
-/* TODO: Replace with image later */
-#header {
-  background-color: #484848;
+#main {
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .flex-box {
@@ -199,6 +207,8 @@ span {
   height: 100%;
   margin: 0 5%;
 }
+
+
 
 #mapDiv {
   height: 400px;
