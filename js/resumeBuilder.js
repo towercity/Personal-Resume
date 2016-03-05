@@ -59,12 +59,12 @@ var education = {
 		"name" : "Florida State University",
 		"location" : "Tallahassee, FL",
 		"major" : "Creative Writing",
-		"minor" : "Film Studies",
+		"degree" : "Bachelor of Arts",
 		"dates" : 2013,
 		"years" : 4
 		}
 	],
-	"onineCourses" : [
+	"onlineCourses" : [
 		{
 		"title"  : "Front-End Developer",
 		"school" : "Udacity",
@@ -88,6 +88,30 @@ var projects = {
 
 //Functions
 
+//prints bio to the page
+bio.display = function() {
+	$("#header").prepend(
+		HTMLheaderName.replace("%data%", bio.name) + 
+		HTMLheaderRole.replace("%data%", bio.role)
+	);
+	$("#header").append(
+		HTMLmobile.replace("%data%", bio.contacts.mobile) + 
+		HTMLemail.replace("%data%", bio.contacts.email) +
+		HTMLgithub.replace("%data%", bio.contacts.github) + 
+		HTMLtwitter.replace("%data%", bio.contacts.twitter) + 
+		HTMLlocation.replace("%data%", bio.contacts.location) + 
+		HTMLbioPic.replace("%data%", bio.bioPic) +
+		HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage)
+	);
+	//checks for skills before printing skills header
+	if (bio.skills.length > 0) {
+		$("#header").append(HTMLskillsStart);
+	}
+	for (skill in bio.skills) {
+		$("#header").append(HTMLskills.replace("%data%", bio.skills[skill]));
+	}
+};
+
 //Prints Work Exp to the page
 work.display = function() {
 	for (job in work.jobs) {
@@ -99,8 +123,34 @@ work.display = function() {
 			HTMLworkDates.replace("%data%", work.jobs[job].dates) +
 			HTMLworkDescription.replace("%data%", work.jobs[job].description)
 		);
-	};
-}
+	}
+};
+
+//prints education to the page
+education.display = function() {
+	for (school in education.schools) {
+		$("#education").append(HTMLschoolStart);
+		$(".education-entry:last").append(
+			HTMLschoolName.replace("%data%", education.schools[school].name) + 
+			HTMLschoolDegree.replace("%data%", education.schools[school].degree) + 
+			HTMLschoolDates.replace("%data%", education.schools[school].dates) + 
+			HTMLschoolLocation.replace("%data%", education.schools[school].location) + 
+			HTMLschoolMajor.replace("%data%", education.schools[school].major)
+		);
+	}
+	if (education.onlineCourses) {
+		$("#education").append(HTMLonlineClasses);
+		for (course in education.onlineCourses) {
+			$("#education").append(HTMLschoolStart);
+			$(".education-entry:last").append(
+				HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title) + 
+				HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school) + 
+				HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates) + 
+				HTMLonlineURL.replace("%data%", education.onlineCourses[course].url)
+			);
+		}
+	}
+};
 
 //Prints Projects to the Page
 projects.display = function() {
@@ -120,40 +170,13 @@ projects.display = function() {
 };
 
 
-//formatted variables
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedSkills = [HTMLskills.replace("%data%", bio.skills[0]), HTMLskills.replace("%data%", bio.skills[1]), HTMLskills.replace("%data%", bio.skills[2]), HTMLskills.replace("%data%", bio.skills[3])];
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-
-
 //Page Display
 
-//header 
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-$("#header").append(formattedMobile);
-$("#header").append(formattedEmail);
-$("#header").append(formattedGithub);
-$("#header").append(formattedTwitter);
-$("#header").append(formattedLocation);
-$("#header").append(formattedBioPic);
-$("#header").append(formattedWelcomeMsg);
-//checks for skills before printing skills header
-if (bio.skills.length > 0) {
-	$("#header").append(HTMLskillsStart);
-};
-$("#header").append(formattedSkills);
+//Function calls
+bio.display();
+work.display();
+education.display();
+projects.display();
 
 //Map
 $("#mapDiv").append(googleMap);
-
-//Function calls
-work.display();
-projects.display();
