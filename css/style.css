@@ -14,10 +14,6 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
-body {
-  background-color: #d4d8ca;
-}
-
 .clear-fix {
   overflow: auto;
 }
@@ -30,7 +26,7 @@ body {
 
 h1 {
   font-size: 40px;
-  color: #372616;
+  color: #4d2600;
   line-height: 48px;
   display: inline;
 }
@@ -38,7 +34,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #372616;
+  color: #4d2600;
   line-height: 29px;
   padding: 10px;
 }
@@ -46,14 +42,14 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #372616;
+  color: #4d2600;
   line-height: 22px;
 }
 
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #372616;
+  color: #4d2600;
   line-height: 17px;
 }
 
@@ -104,35 +100,35 @@ a {
 }
 
 #skills-h3 {
-  color: #372616;
+  color: #4d2600;
   display: none;
 }
 
 .dark {
-  background-color: #372616;
+  background-color: #4d2600;
 }
 
 .dark-text {
-  color: #372616;
+  color: #4d2600;
 }
 
 .white{
-  background-color: #fffffd;
+  background-color: #f4f2f1;
 }
 
 .white-text {
   font-weight: bold;
-  color: #fffffd;
+  color: #f4f2f1;
 }
 
 .tan {
-  background-color: #fffcea;
+  background-color: #e2d4d9;
   padding-bottom: 10px;
   clear:both;
 }
 
 .green {
-  background-color: #8aa191;
+  background-color: #aaa1a1;
 }
 
 #main {
