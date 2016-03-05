@@ -11,7 +11,7 @@ var bio = {
 		"twitter" : "towercitydrive",
 		"location" : "Baton Rouge, LA"
 	},
-	"bioPic" : "images/fry.jpg",
+	"bioPic" : "images/me.jpg",
 	"welcomeMessage" : "Hello, friend!",
 	"skills" : [
 		"writing", "programming", "teaching", "JS"
