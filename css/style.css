@@ -19,6 +19,10 @@ h6 {
   font-family: 'Cabin', sans-serif;
 }
 
+body {
+  background-color: #f4f2f1;
+}
+
 .clear-fix {
   overflow: auto;
 }
@@ -87,27 +91,12 @@ span {
 
 /* Colors */
 
-.dark {
-  background-color: #4d2600;
-}
-
 .dark-text {
   color: #4d2600;
 }
 
-.white{
-  background-color: #f4f2f1;
-}
-
 .white-text {
-  font-weight: bold;
   color: #f4f2f1;
-}
-
-.tan {
-  background-color: #e2d4d9;
-  padding-bottom: 10px;
-  clear:both;
 }
 
 .green {

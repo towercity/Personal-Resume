@@ -81,7 +81,7 @@ var projects = {
 		"title" : "Work Portfolio",
 		"dates" : 2016,
 		"description" : "Portfolio of audio experience",
-		"images" : [/*"images/project01.png", */"images/project02.png"]
+		"images" : ["images/project01.png", "images/project02.png"]
 	}
 	]
 };
