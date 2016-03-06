@@ -16,9 +16,7 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderBox = '<div id="header-box"></div>';
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<div>%data%</div>';
-var HTMLbioPic = '<img class="biopic" src="%data%">';
 var HTMLheaderText = '<div id="header-text"></div>';
-var HTMLclear = '<div class="clear"></div>'
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="dark-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="dark-text">mobile</span><span class="white-text">%data%</span></li>';
@@ -28,7 +26,7 @@ var HTMLgithub = '<li class="flex-item"><span class="dark-text">github</span><sp
 var HTMLblog = '<li class="flex-item"><span class="dark-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="dark-text">location</span><span class="white-text">%data%</span></li>';
 
-var HTMLwelcomeMsg = '<div id="welcome-message">%data%</div>';
+var HTMLwelcomeMsg = '<h2 class="center-text">Welcome!</h2><div id="welcome-message" class="row">%data%</div>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-item"><span>%data%</span></li>';

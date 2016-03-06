@@ -12,7 +12,8 @@ var bio = {
 		"location" : "Baton Rouge, LA"
 	},
 	"bioPic" : "images/me.jpg",
-	"welcomeMessage" : "Hello, friend!",
+	"welcomeMessage" : "I'm a beginning front-end web designer with strong experience in writing," + " " +
+						"audio, and education.",
 	"skills" : [
 		"writing", "programming", "teaching", "JS"
 	]
@@ -110,8 +111,6 @@ bio.display = function() {
 		HTMLheaderName.replace("%data%", bio.name) +
 		HTMLheaderRole.replace("%data%", bio.role)
 		);
-	//$("#header-box").append(HTMLbioPic.replace("%data%", bio.bioPic));
-	$("#header").append(HTMLclear);
 	$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
 	//checks for skills before printing skills header
 	if (bio.skills.length > 0) {
