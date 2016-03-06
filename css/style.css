@@ -1,35 +1,26 @@
+/* Globals */
+
 body,
 div,
 ul,
 li,
-p,
+p {
+  padding:0;
+  margin:0;
+  font-family: 'EB Garamond', serif;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  padding:0;
-  margin:0;
-  font-family: "Roboto", sans-serif;
-}
-
-body {
-  background: url("../images/background.jpg") no-repeat center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  font-family: 'Cabin', sans-serif;
 }
 
 .clear-fix {
   overflow: auto;
-}
-
-.education-entry,
-.work-entry,
-.project-entry {
-  padding: 0 5%;
 }
 
 h1 {
@@ -69,23 +60,6 @@ h5 {
 
 }
 
-.date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: left;
-}
-
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
-
-}
-
 p {
   font-size: 14px;
   color: #333;
@@ -99,17 +73,19 @@ a {
   display: block;
 }
 
-.welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
-  line-height: 28px;
+ul {
+  list-style-type: none;
 }
 
-#skills-h3 {
-  color: #4d2600;
-  display: none;
+img {
+  padding: 10px;
 }
+
+span {
+  padding: 5px;
+}
+
+/* Colors */
 
 .dark {
   background-color: #4d2600;
@@ -138,11 +114,30 @@ a {
   background-color: #aaa1a1;
 }
 
-#main {
-  max-width: 960px;
-  margin: 0 auto;
-  opacity: 0.99;
+.date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  float: left;
 }
+
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  float: right;
+}
+
+.education-entry,
+.work-entry,
+.project-entry {
+  padding: 0 5%;
+}
+
+
+/* General Classes */
 
 .flex-box {
   display: -webkit-flex;
@@ -153,27 +148,81 @@ a {
   padding: 10px;
 }
 
+.flex-item {
+  float:left;
+  list-style: none;
+}
+
+.clear {
+  clear:both;
+}
+
 .center-content {
   padding: 2.5% 5%;
 }
 
-ul {
-  list-style-type: none;
+/* Specific Elements/Classes */
+
+#main {
+  max-width: 960px;
+  margin: 0 auto;
+  opacity: 0.99;
+}
+
+#header {
+  padding: 0 0 5px 0;
+}
+
+#header-box {
+  width: 100%;
+  height: 700px;
+  background: url("../images/background.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#header-text {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  top: 600px;
+  color: white;
+}
+
+#header-text h1 { 
+  color: white;
+  padding-bottom: 10px;
+  letter-spacing: 2px;
 }
 
 .biopic {
-  float: left;
   padding: 10px;
   width: 200px;
   display: none;
 }
 
-img {
-  padding: 10px;
+#welcome-message {
+  padding-top: 10px;
+  text-align: justify;
 }
 
-span {
-  padding: 5px;
+#skills-h3 {
+  color: #4d2600;
+  display: none;
+}
+
+#map {
+  display: block;
+  height: 100%;
+  margin: 0 5%;
+}
+
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
 }
 
 #lets-connect {
@@ -204,25 +253,25 @@ span {
   .welcome-message {
     display: none;
   }
-}
 
-#map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
-}
+  #header-box {
+    height: 450px;
+  }
 
-
-
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
+  #header-text {
+    top: 350px;
+  }
 }
 
 @media only screen and (min-width: 750px) {
   #skills-h3,
   .biopic {
     display: block;
+  }
+}
+
+@media only screen and (min-width: 1380px) {
+  #header-box {
+    background-position: center top;
   }
 }
