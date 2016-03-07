@@ -1,5 +1,12 @@
 /* Globals */
 
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 body,
 div,
 li,
@@ -132,7 +139,12 @@ span {
   padding: 12.5px 5%;
 }
 
-/* Flexbox setuo */
+.work-left,
+.work-right {
+  padding: 5px;
+}
+
+/* Flexbox setup */
 
 .container {
     width: 100%;

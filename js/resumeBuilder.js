@@ -96,8 +96,11 @@ var education = {
 		"location" : "Tallahassee, FL",
 		"major" : "Creative Writing",
 		"degree" : "Bachelor of Arts",
-		"dates" : 2013,
-		"years" : 4
+		"dates" : "August 2009 - May 2013",
+		"years" : 4,
+		"description" : [
+			"Produced sixty pages of original fiction for honors thesis",
+			"Attended four limited access writing workshops, each of which required approval for enrollment based on writing samples"]
 		}
 	],
 	"onlineCourses" : [
@@ -105,7 +108,10 @@ var education = {
 		"title"  : "Front-End Developer",
 		"school" : "Udacity",
 		"dates" : 2016,
-		"url" : "https://www.udacity.com/"
+		"url" : "https://www.udacity.com/",
+		"description" : [
+			"Learned fundamentals of html, css, and javascript",
+			"Created a variety of original projects using fundamentals of web design"]
 		}
 	]
 };
@@ -180,24 +186,40 @@ work.display = function() {
 education.display = function() {
 	for (school in education.schools) {
 		$("#education").append(HTMLschoolStart);
-		$(".education-entry:last").append(
+		$(".education-entry:last").append(HTMLschoolLeft);
+		$(".education-left:last").append(
 			HTMLschoolName.replace("%data%", education.schools[school].name) + 
+			HTMLschoolDates.replace("%data%", education.schools[school].dates) +
+			HTMLschoolLocation.replace("%data%", education.schools[school].location)
+		);
+		$(".education-entry:last").append(HTMLschoolRight);
+		$(".education-right:last").append(
 			HTMLschoolDegree.replace("%data%", education.schools[school].degree) + 
-			HTMLschoolDates.replace("%data%", education.schools[school].dates) + 
-			HTMLschoolLocation.replace("%data%", education.schools[school].location) + 
 			HTMLschoolMajor.replace("%data%", education.schools[school].major)
 		);
+		for (duty in education.schools[school].description) {
+			$(".education-right:last").append(HTMLschoolDescription.replace("%data%", education.schools[school].description[duty]));			
+		}
+		$("#education").append(HTMLclear);
 	}
 	if (education.onlineCourses) {
-		$("#education").append(HTMLonlineClasses);
 		for (course in education.onlineCourses) {
+			$("#education").append(HTMLonlineClasses);
 			$("#education").append(HTMLschoolStart);
-			$(".education-entry:last").append(
-				HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title) + 
+			$(".education-entry:last").append(HTMLschoolLeft);
+			$(".education-left:last").append(
 				HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school) + 
 				HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates) + 
 				HTMLonlineURL.replace("%data%", education.onlineCourses[course].url)
 			);
+			$(".education-entry:last").append(HTMLschoolRight);
+			$(".education-right:last").append(
+				HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title)
+			);
+			for (duty in education.schools[school].description) {
+				$(".education-right:last").append(HTMLschoolDescription.replace("%data%", education.onlineCourses[course].description[duty]));			
+			}
+			$("#education").append(HTMLclear);
 		}
 	}
 };
