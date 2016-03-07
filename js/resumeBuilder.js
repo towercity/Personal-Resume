@@ -112,12 +112,13 @@ bio.display = function() {
 		HTMLheaderRole.replace("%data%", bio.role)
 		);
 	$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+
 	//checks for skills before printing skills header
 	if (bio.skills.length > 0) {
-		$("#header").append(HTMLskillsStart);
-	}
-	for (skill in bio.skills) {
-		$("#header").append(HTMLskills.replace("%data%", bio.skills[skill]));
+		$("#bottomRow").prepend(HTMLskillsStart);
+		for (skill in bio.skills) {
+			$("#skillsList").append(HTMLskills.replace("%data%", bio.skills[skill]));
+		}
 	}
 };
 

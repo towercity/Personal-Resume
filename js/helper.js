@@ -28,8 +28,8 @@ var HTMLlocation = '<li class="flex-item"><span class="dark-text">location</span
 
 var HTMLwelcomeMsg = '<h2 class="center-text">Welcome!</h2><div id="welcome-message" class="row">%data%</div>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span>%data%</span></li>';
+var HTMLskillsStart = '<div id="skills"><h3 id="skills-h3">Skills at a Glance:</h3><ul id="skillsList"></ul>';
+var HTMLskills = '<li><span>%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';

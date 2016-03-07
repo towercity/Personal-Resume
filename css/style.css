@@ -2,12 +2,13 @@
 
 body,
 div,
-ul,
 li,
 p {
   padding:0;
   margin:0;
   font-family: 'EB Garamond', serif;
+  font-size: 1em;
+  letter-spacing: 0.75px;
 }
 
 h1,
@@ -217,7 +218,6 @@ span {
 #header-text h1 { 
   color: white;
   padding-bottom: 10px;
-  letter-spacing: 2px;
 }
 
 #topContacts {
@@ -252,11 +252,6 @@ span {
 }
 
 /* Format altering classes */
-
-.flex-item {
-  float:left;
-  list-style: none;
-}
 
 .center-content {
   padding: 2.5% 5%;
