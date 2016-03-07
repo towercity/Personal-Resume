@@ -15,7 +15,7 @@ var bio = {
 	"welcomeMessage" : "I'm a beginning front-end web designer with strong experience in writing," + " " +
 						"audio, and education.",
 	"skills" : [
-		"writing", "programming", "teaching", "JS"
+		"Writing", "Web Design", "Teaching", "Javascript", "CSS", "HTML", "Adobe Audition"
 	]
 };
 
@@ -124,6 +124,24 @@ var projects = {
 		"dates" : 2016,
 		"description" : "Portfolio of audio experience",
 		"images" : ["images/project01.jpg"]
+	},
+	{
+		"title" : "Dummy Project 1",
+		"dates" : 2016,
+		"description" : "Stand in for later Udacity Projects",
+		"images" : ["http://lorempixel.com/250/360/cats"]
+	},
+	{
+		"title" : "Dummy Project 2",
+		"dates" : 2016,
+		"description" : "Stand in for later Udacity Projects",
+		"images" : ["http://lorempixel.com/250/360/city"]
+	},
+	{
+		"title" : "Dummy Project 3",
+		"dates" : 2016,
+		"description" : "Stand in for later Udacity Projects",
+		"images" : ["http://lorempixel.com/250/360/animals"]
 	}
 	]
 };
