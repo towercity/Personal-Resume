@@ -93,7 +93,7 @@ a {
   display: block;
 }
 
-ul {
+.plain-list {
   list-style-type: none;
 }
 
@@ -210,6 +210,10 @@ span {
 
 /* Specific Elements/Classes */
 
+#main {
+  margin-bottom: 50px;
+}
+
 #header {
   padding: 0 0 5px 0;
 }
@@ -242,11 +246,6 @@ span {
   margin-bottom: 30px;
 }
 
-#skills-h3 {
-  color: #4d2600;
-  display: none;
-}
-
 #map {
   display: block;
   height: 100%;
@@ -255,12 +254,7 @@ span {
 
 #mapDiv {
   height: 400px;
-  width: 100%;
   padding-bottom: 5%;
-}
-
-#lets-connect {
-  text-align: center;
 }
 
 /* Format altering classes */
@@ -271,6 +265,10 @@ span {
 
 .center-text {
   text-align: center;
+}
+
+.left-text {
+  text-align: left;
 }
 
 .clear {
@@ -298,12 +296,6 @@ span {
 
   #header-text {
     top: 350px;
-  }
-}
-
-@media only screen and (min-width: 750px) {
-  #skills-h3 {
-    display: block;
   }
 }
 

@@ -156,7 +156,7 @@ bio.display = function() {
 
 	//checks for skills before printing skills header
 	if (bio.skills.length > 0) {
-		$("#bottomRow").prepend(HTMLskillsStart);
+		$("#bottomRow").append(HTMLskillsStart);
 		for (skill in bio.skills) {
 			$("#skillsList").append(HTMLskills.replace("%data%", bio.skills[skill]));
 		}

@@ -30,7 +30,7 @@ var HTMLlocation = '<li class="flex-item"><span class="dark-text">location</span
 
 var HTMLwelcomeMsg = '<h2 class="center-text">Welcome!</h2><div id="welcome-message" class="row">%data%</div>';
 
-var HTMLskillsStart = '<div id="skills"><h3 id="skills-h3">Skills:</h3><ul id="skillsList"></ul>';
+var HTMLskillsStart = '<div id="skills" class="col-md-3"><h2 class="left-text">Skills:</h2><ul id="skillsList"></ul>';
 var HTMLskills = '<li><span>%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry row"></div>';
