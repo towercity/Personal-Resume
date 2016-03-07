@@ -13,6 +13,8 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 
+var HTMLclear = '<div class="clear"></div>';
+
 var HTMLheaderBox = '<div id="header-box"></div>';
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<div>%data%</div>';
@@ -28,15 +30,17 @@ var HTMLlocation = '<li class="flex-item"><span class="dark-text">location</span
 
 var HTMLwelcomeMsg = '<h2 class="center-text">Welcome!</h2><div id="welcome-message" class="row">%data%</div>';
 
-var HTMLskillsStart = '<div id="skills"><h3 id="skills-h3">Skills at a Glance:</h3><ul id="skillsList"></ul>';
+var HTMLskillsStart = '<div id="skills"><h3 id="skills-h3">Skills:</h3><ul id="skillsList"></ul>';
 var HTMLskills = '<li><span>%data%</span></li>';
 
-var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
-var HTMLworkTitle = ' - %data%</a>';
+var HTMLworkStart = '<div class="work-entry row"></div>';
+var HTMLworkLeft = '<div class="work-left col-md-5"></div>';
+var HTMLworkRight = '<div class="work-right col-md-7"></div>';
+var HTMLworkEmployer = '<p>%data%</p>';
+var HTMLworkTitle = '<p>%data%</p>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkDescription = '<li>%data%</li>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';

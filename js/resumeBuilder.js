@@ -23,32 +23,67 @@ var bio = {
 var work = {
 	"jobs" : [
 		{
+		"employer" : "DIG Baton Rouge",
+		"title" : "Reporter",
+		"location" : "Baton Rouge, LA",
+		"dates" : "August 2015 - Present",
+		"description" : [
+			"Researched and wrote articles about community events",
+			"Pitched stories for publication",
+			"Worked independently on stories from inception to deadline"]
+		},
+		{
 		"employer" : "Franciscan Ministries of Our Lady Health System",
 		"title" : "AP Clerk",
 		"location" : "Baton Rouge, LA",
 		"dates" : "December 2014 - Present",
-		"description" : "Processed invoices"
+		"description" : [
+			"Processed invoices"]
 		},
 		{
 		"employer" : "LSU Cox Center for Student Athletes",
 		"title" : "Content Tutor",
 		"location" : "Baton Rouge, LA",
 		"dates" : "July - December 2014",
-		"description" : "Taught English, writing"
+		"description" : [
+			"Tutored student-athletes in composition and literature",
+			"Generated and presented educational materials",
+			"Helped students set and meet structured learning goals"]
 		},
 		{
 		"employer" : "WFSU-FM",
 		"title" : "Production Assisstant",
 		"location" : "Tallahassee, FL",
 		"dates" : "January - July 2014",
-		"description" : "Ran automation software, maintained databases"
+		"description" : ["Ran automation software, maintained databases"]
+		},
+		{
+		"employer" : "Solution Skills, Inc.",
+		"title" : "Marketing Assisstant",
+		"location" : "Tallahassee, FL",
+		"dates" : "January - July 2014",
+		"description" : ["Wrote, edited, and formatted marketing materials, strategy guides, and practice tests",
+			"Researched and compiled information on standardized tests",
+			"Organized and led focus groups and workshops with high-school and college aged students"]
+		},
+		{
+		"employer" : "Leon County Schools",
+		"title" : "Substitute Teacher",
+		"location" : "Tallahassee, FL",
+		"dates" : "January - July 2014",
+		"description" : ["Taught large groups of students a variety of subjects",
+			"Worked individually with students as needed",
+			"Reported progress and specific student needs to primary teacher"]
 		},
 		{
 		"employer" : "WVFS Tallahassee",
 		"title" : "Disc Jockey",
 		"location" : "Tallahassee, FL",
 		"dates" : "January 2012 - December 2013",
-		"description" : "Reviewed incoming music, maintained music catalog, ran all on-air audio"
+		"description" : [
+			"Wrote reviews for albums entered into catalog",
+			"Researched, wrote, and read summaries of articles on air",
+			"Wrote and produced station identifications"]
 		}
 	]
 };
@@ -126,13 +161,18 @@ bio.display = function() {
 work.display = function() {
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
-		$(".work-entry:last").append(
+		$(".work-entry:last").append(HTMLworkLeft);
+		$(".work-left:last").append(
 			HTMLworkEmployer.replace("%data%", work.jobs[job].employer) +
-			HTMLworkTitle.replace("%data%", work.jobs[job].title) +
-			HTMLworkLocation.replace("%data%", work.jobs[job].location) +
 			HTMLworkDates.replace("%data%", work.jobs[job].dates) +
-			HTMLworkDescription.replace("%data%", work.jobs[job].description)
+			HTMLworkLocation.replace("%data%", work.jobs[job].location)
 		);
+		$(".work-entry:last").append(HTMLworkRight);
+		$(".work-right:last").append(HTMLworkTitle.replace("%data%", work.jobs[job].title));
+		for (duty in work.jobs[job].description) {
+			$(".work-right:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description[duty]));			
+		}
+		$("#workExperience").append(HTMLclear);
 	}
 };
 

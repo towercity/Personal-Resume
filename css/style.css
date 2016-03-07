@@ -18,10 +18,17 @@ h4,
 h5,
 h6 {
   font-family: 'Cabin', sans-serif;
+  text-align: center;
 }
 
 body {
   background-color: #f4f2f1;
+}
+
+hr {
+  max-width: 1000px;
+  margin: 20px auto;
+  color: #4d2600;
 }
 
 .clear-fix {
@@ -41,7 +48,7 @@ h2 {
   color: #4d2600;
   line-height: 29px;
   padding: 10px;
-  margin: 7px 0 2px 0;
+  margin: 7px 0 15px 0;
 }
 
 h3 {
@@ -109,22 +116,20 @@ span {
   font-style: italic;
   font-size: 14px;
   color: #999;
-  line-height: 16px;
-  float: left;
+  line-height: 18px;
 }
 
 .location-text {
   font-style: italic;
   font-size: 14px;
   color: #999;
-  line-height: 16px;
-  float: right;
+  line-height: 18px;
 }
 
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+  padding: 12.5px 5%;
 }
 
 /* Flexbox setuo */
@@ -222,12 +227,7 @@ span {
 
 #topContacts {
   padding: 5px 0;
-}
-
-.biopic {
-  padding: 10px;
-  width: 200px;
-  display: none;
+  margin-bottom: 30px;
 }
 
 #skills-h3 {
@@ -261,6 +261,10 @@ span {
   text-align: center;
 }
 
+.clear {
+  clear: both;
+}
+
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
@@ -276,16 +280,6 @@ span {
 }
 
 @media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
-
   #header-box {
     height: 450px;
   }
@@ -296,8 +290,7 @@ span {
 }
 
 @media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
+  #skills-h3 {
     display: block;
   }
 }
