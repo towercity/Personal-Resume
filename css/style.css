@@ -427,6 +427,12 @@ span {
   }
 }
 
+@media screen and (max-width: 340px) {
+  #header-text {
+    top: 325px;
+  }
+}
+
 @media only screen and (min-width: 1380px) {
   #header-box {
     background-position: center top;
