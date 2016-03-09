@@ -97,10 +97,6 @@ a {
   list-style-type: none;
 }
 
-img {
-  padding: 10px;
-}
-
 span {
   padding: 5px;
 }
@@ -137,6 +133,12 @@ span {
 .work-entry,
 .project-entry {
   padding: 12.5px 5%;
+}
+
+.project-entry,
+.project-overlay {
+  width: 250px;
+  height: 360px;
 }
 
 .work-left,
@@ -208,6 +210,93 @@ span {
     width: 100%;
 }
 
+/* Foundation.zurb ImageHover effects CSS adaptation */
+.image-wrapper {
+  width: 250px;
+  height: 360px;
+  margin: 15px auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  border: 1px solid #4d2600;
+  border-radius: 4px;
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image-overlay-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.overlay-fade-in p {
+  color: #f4f2f1;
+  font-size: 18px;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+.overlay-fade-in img {
+  transition: all 0.2s linear;
+}
+
+.overlay-fade-in .image-overlay-content {
+  opacity: 0;
+  background-color: rgba(170, 161, 161, 0.4);
+  transition: all 0.4s ease-in-out;
+}
+
+.overlay-fade-in h2 {
+  color: #f4f2f1;
+  margin-top: 40%;
+  font-size: 26px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  font-family: 'EB Garamond', serif;
+}
+
+.overlay-fade-in .button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 14px;
+  background: #f4f2f1;
+  color: #4d2600;
+  text-transform: uppercase;
+  box-shadow: 0 0 1px #000;
+  position: relative;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Cabin', sans-serif;
+}
+
+.overlay-fade-in:hover img {
+  transform: scale(1.2); 
+}
+
+.overlay-fade-in:hover .image-overlay-content {
+  opacity: 1; 
+}
+
+.overlay-fade-in:hover h2, .overlay-fade-in p, .overlay-fade-in .button {
+  opacity: 1; 
+}
+
+.overlay-fade-in:hover p {
+  transition-delay: 0.1s; 
+}
+
+.overlay-fade-in:hover .button {
+  transition-delay: 0.2s; 
+}
+
 /* Specific Elements/Classes */
 
 #main {
@@ -233,11 +322,11 @@ span {
   text-align: center;
   margin: 0 auto;
   top: 600px;
-  color: white;
+  color: #f4f2f1;
 }
 
 #header-text h1 { 
-  color: white;
+  color: #f4f2f1;
   padding-bottom: 10px;
 }
 
@@ -250,6 +339,8 @@ span {
   display: block;
   height: 100%;
   margin: 0 5%;
+  border: 1px solid #4d2600;
+  border-radius: 4px;
 }
 
 #mapDiv {

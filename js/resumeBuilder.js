@@ -110,7 +110,7 @@ var education = {
 		"dates" : 2016,
 		"url" : "https://www.udacity.com/",
 		"description" : [
-			"Learned fundamentals of html, css, and javascript",
+			"Learned fundamentals of HTML, CSS, and Javascript",
 			"Created a variety of original projects using fundamentals of web design"]
 		}
 	]
@@ -123,25 +123,22 @@ var projects = {
 		"title" : "Work Portfolio",
 		"dates" : 2016,
 		"description" : "Portfolio of audio experience",
-		"images" : ["images/project01.jpg"]
+		"image" : "images/project01.jpg",
+		"link" : "#"
 	},
 	{
 		"title" : "Dummy Project 1",
 		"dates" : 2016,
 		"description" : "Stand in for later Udacity Projects",
-		"images" : ["http://lorempixel.com/250/360/cats"]
+		"image" : "http://lorempixel.com/250/360/cats",
+		"link" : "#"
 	},
 	{
 		"title" : "Dummy Project 2",
 		"dates" : 2016,
 		"description" : "Stand in for later Udacity Projects",
-		"images" : ["http://lorempixel.com/250/360/city"]
-	},
-	{
-		"title" : "Dummy Project 3",
-		"dates" : 2016,
-		"description" : "Stand in for later Udacity Projects",
-		"images" : ["http://lorempixel.com/250/360/animals"]
+		"image" : "http://lorempixel.com/250/360/city",
+		"link" : "#"
 	}
 	]
 };
@@ -246,16 +243,14 @@ education.display = function() {
 projects.display = function() {
 	for (project in projects.projects) {
 		$("#projects").append(HTMLprojectStart);
-		$(".project-entry:last").append(
+		$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[project].image));
+		$(".project-entry:last").append(HTMLprojectOverlay);
+		$(".project-overlay:last").append(
 			HTMLprojectTitle.replace("%data%", projects.projects[project].title) +
 			HTMLprojectDates.replace("%data%", projects.projects[project].dates) +
-			HTMLprojectDescription.replace("%data%", projects.projects[project].description)
+			HTMLprojectDescription.replace("%data%", projects.projects[project].description) + 
+			HTMLprojectLink.replace("%data%", projects.projects[project].link)
 		);
-		if (projects.projects[project].images.length > 0) {
-			for (image in projects.projects[project].images) {
-				$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[project].images[image]));
-			}
-		}
 	}
 };
 
