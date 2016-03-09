@@ -28,9 +28,9 @@ var HTMLgithub = '<li class="flex-item"><span class="dark-text">github</span><sp
 var HTMLblog = '<li class="flex-item"><span class="dark-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="dark-text">location</span><span class="white-text">%data%</span></li>';
 
-var HTMLwelcomeMsg = '<h2 class="center-text">Welcome!</h2><div id="welcome-message" class="row">%data%</div>';
+var HTMLwelcomeMsg = '<h2 class="center-text">Welcome!</h2><p id="welcome-message" class="row">%data%</p>';
 
-var HTMLskillsStart = '<div id="skills" class="col-md-3"><h2 class="left-text">Skills:</h2><ul id="skillsList"></ul>';
+var HTMLskillsStart = '<div id="skills" class="col-md-3"><h2 id="skills-h3" class="left-text">Skills:</h2><ul id="skillsList"></ul>';
 var HTMLskills = '<li><span>%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry row"></div>';
@@ -42,7 +42,7 @@ var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<li>%data%</li>';
 
-var HTMLprojectStart = '<div class="col-md-4"><div class="project-entry image-wrapper overlay-fade-in"></div></div>';
+var HTMLprojectStart = '<div class="col-md-4 project-container"><div class="project-entry image-wrapper overlay-fade-in"></div></div>';
 var HTMLprojectOverlay = '<div class="project-overlay image-overlay-content"></div>'
 var HTMLprojectTitle = '<h2>%data%</h2>';
 var HTMLprojectDates = '<div class="white-text">%data%</div>';

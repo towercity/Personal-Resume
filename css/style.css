@@ -14,7 +14,7 @@ p {
   padding:0;
   margin:0;
   font-family: 'EB Garamond', serif;
-  font-size: 1em;
+  font-size: 16px;
   letter-spacing: 0.75px;
 }
 
@@ -36,6 +36,8 @@ hr {
   max-width: 1000px;
   margin: 20px auto;
   color: #4d2600;
+  border: 1px solid #999;
+  border-bottom: none;
 }
 
 .clear-fix {
@@ -43,7 +45,7 @@ hr {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 46px;
   color: #4d2600;
   line-height: 48px;
   display: inline;
@@ -51,7 +53,7 @@ h1 {
 
 h2 {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 32px;
   color: #4d2600;
   line-height: 29px;
   padding: 10px;
@@ -81,7 +83,6 @@ h5 {
 }
 
 p {
-  font-size: 14px;
   color: #333;
   line-height: 21px;
 }
@@ -89,7 +90,6 @@ p {
 a {
   color: #9da3ac;
   text-decoration: none;
-  margin-top: 10px;
   display: block;
 }
 
@@ -219,7 +219,7 @@ span {
   overflow: hidden;
   position: relative;
   text-align: center;
-  border: 1px solid #4d2600;
+  border: 1px solid #999;
   border-radius: 4px;
 }
 
@@ -340,7 +340,7 @@ span {
   display: block;
   height: 100%;
   margin: 0 5%;
-  border: 1px solid #4d2600;
+  border: 1px solid #999;
   border-radius: 4px;
 }
 
@@ -370,14 +370,21 @@ span {
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
+  hr {
+    margin: 20px 25px;
   }
 }
 
 @media only screen and (max-width:900px) {
   .biopic {
     width: 175px;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .project-container {
+    width: 100%;
+    margin-bottom: 15px;
   }
 }
 
@@ -388,6 +395,35 @@ span {
 
   #header-text {
     top: 350px;
+  }
+
+  #welcome-message {
+    margin: 0 25px;
+  }
+
+  #skills {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+
+  #skills-h3 {
+    text-align: center;
+  }
+
+  #skillsList {
+    margin: 0 auto;
+    list-style-position: inside;
+    text-align: center;
+    padding: 0;
+  }
+
+  #mapDiv {
+    width: 100%;
+    order: 2;
+    padding: 20px 0;
+    border-top: 1px solid #999;
+    margin: 0 25px;
   }
 }
 
