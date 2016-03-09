@@ -45,7 +45,7 @@ var HTMLworkDescription = '<li>%data%</li>';
 var HTMLprojectStart = '<div class="col-md-4"><div class="project-entry image-wrapper overlay-fade-in"></div></div>';
 var HTMLprojectOverlay = '<div class="project-overlay image-overlay-content"></div>'
 var HTMLprojectTitle = '<h2>%data%</h2>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
+var HTMLprojectDates = '<div class="white-text">%data%</div>';
 var HTMLprojectDescription = '<p>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 var HTMLprojectLink = '<a href="%data%" class="button">View project</a>'
@@ -60,7 +60,7 @@ var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '%data%</p>';
 var HTMLschoolDescription = '<li>%data%</li>';
 
-var HTMLonlineClasses = '<h2>Online Classes</h2>';
+var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<p>%data%</p>';
 var HTMLonlineSchool = '<p>%data%</p>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
