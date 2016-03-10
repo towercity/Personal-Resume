@@ -43,12 +43,12 @@ var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<li>%data%</li>';
 
 var HTMLprojectStart = '<div class="col-md-4 project-container"><div class="project-entry image-wrapper overlay-fade-in"></div></div>';
-var HTMLprojectOverlay = '<div class="project-overlay image-overlay-content"></div>'
+var HTMLprojectOverlay = '<div class="project-overlay image-overlay-content"></div>';
 var HTMLprojectTitle = '<h2>%data%</h2>';
 var HTMLprojectDates = '<div class="white-text">%data%</div>';
 var HTMLprojectDescription = '<p>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
-var HTMLprojectLink = '<a href="%data%" class="button">View project</a>'
+var HTMLprojectLink = '<a href="%data%" class="button">View project</a>';
 
 var HTMLschoolStart = '<div class="education-entry row"></div>';
 var HTMLschoolLeft = '<div class="education-left col-md-5"></div>';

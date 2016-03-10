@@ -172,7 +172,7 @@ bio.display = function() {
 	//checks for skills before printing skills header
 	if (bio.skills.length > 0) {
 		$("#bottomRow").append(HTMLskillsStart);
-		for (skill in bio.skills) {
+		for (var skill in bio.skills) {
 			$("#skillsList").append(HTMLskills.replace("%data%", bio.skills[skill]));
 		}
 	}
@@ -180,7 +180,7 @@ bio.display = function() {
 
 //Prints Work Exp to the page
 work.display = function() {
-	for (job in work.jobs) {
+	for (var job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 		$(".work-entry:last").append(HTMLworkLeft);
 		$(".work-left:last").append(
@@ -190,7 +190,7 @@ work.display = function() {
 		);
 		$(".work-entry:last").append(HTMLworkRight);
 		$(".work-right:last").append(HTMLworkTitle.replace("%data%", work.jobs[job].title));
-		for (duty in work.jobs[job].description) {
+		for (var duty in work.jobs[job].description) {
 			$(".work-right:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description[duty]));			
 		}
 		$("#workExperience").append(HTMLclear);
@@ -199,7 +199,7 @@ work.display = function() {
 
 //prints education to the page
 education.display = function() {
-	for (school in education.schools) {
+	for (var school in education.schools) {
 		$("#education").append(HTMLschoolStart);
 		$(".education-entry:last").append(HTMLschoolLeft);
 		$(".education-left:last").append(
@@ -212,13 +212,13 @@ education.display = function() {
 			HTMLschoolDegree.replace("%data%", education.schools[school].degree) + 
 			HTMLschoolMajor.replace("%data%", education.schools[school].major)
 		);
-		for (duty in education.schools[school].description) {
+		for (var duty in education.schools[school].description) {
 			$(".education-right:last").append(HTMLschoolDescription.replace("%data%", education.schools[school].description[duty]));			
 		}
 		$("#education").append(HTMLclear);
 	}
 	if (education.onlineCourses) {
-		for (course in education.onlineCourses) {
+		for (var course in education.onlineCourses) {
 			$("#education").append(HTMLonlineClasses);
 			$("#education").append(HTMLschoolStart);
 			$(".education-entry:last").append(HTMLschoolLeft);
@@ -231,7 +231,7 @@ education.display = function() {
 			$(".education-right:last").append(
 				HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title)
 			);
-			for (duty in education.schools[school].description) {
+			for (var duty in education.schools[school].description) {
 				$(".education-right:last").append(HTMLschoolDescription.replace("%data%", education.onlineCourses[course].description[duty]));			
 			}
 			$("#education").append(HTMLclear);
@@ -241,7 +241,7 @@ education.display = function() {
 
 //Prints Projects to the Page
 projects.display = function() {
-	for (project in projects.projects) {
+	for (var project in projects.projects) {
 		$("#projects").append(HTMLprojectStart);
 		$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[project].image));
 		$(".project-entry:last").append(HTMLprojectOverlay);
