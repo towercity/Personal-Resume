@@ -1,4 +1,4 @@
-# Matthew Nerger Web Resume
+# Personal Resume
 
 My web-based resume, designed to show of some of my skills
 
