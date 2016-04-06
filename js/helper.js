@@ -1,7 +1,149 @@
+var view = {
+    //resume info Objects
+    //bio object
+    bio: {
+    	"name" : "Matthew Nerger",
+    	"role" : "Front-End Developer",
+    	"contacts" : {
+    		"mobile" : "813.758.8512",
+    		"email" : "mnerger@lsu.edu",
+    		"github" : "towercity",
+    		"twitter" : "towercitydrive",
+    		"location" : "Baton Rouge, LA"
+    	},
+    	"bioPic" : "images/me.jpg",
+    	"welcomeMessage" : "I'm a beginning front-end web designer with strong experience in writing," + " " +
+    						"audio, and education.",
+    	"skills" : [
+    		"Writing", "Web Design", "Teaching", "Javascript", "CSS", "HTML", "Adobe Audition"
+    	]
+    },
 
-var model = {
-    HTMLclear: '<div class="clear"></div>',
+    //work object
+    work: {
+    	"jobs" : [
+    		{
+    		"employer" : "DIG Baton Rouge",
+    		"title" : "Reporter",
+    		"location" : "Baton Rouge, LA",
+    		"dates" : "August 2015 - Present",
+    		"description" : [
+    			"Researched and wrote articles about community events",
+    			"Pitched stories for publication",
+    			"Worked independently on stories from inception to deadline"]
+    		},
+    		{
+    		"employer" : "Franciscan Ministries of Our Lady Health System",
+    		"title" : "AP Clerk",
+    		"location" : "Baton Rouge, LA",
+    		"dates" : "December 2014 - Present",
+    		"description" : [
+    			"Processed invoices"]
+    		},
+    		{
+    		"employer" : "LSU Cox Center for Student Athletes",
+    		"title" : "Content Tutor",
+    		"location" : "Baton Rouge, LA",
+    		"dates" : "July - December 2014",
+    		"description" : [
+    			"Tutored student-athletes in composition and literature",
+    			"Generated and presented educational materials",
+    			"Helped students set and meet structured learning goals"]
+    		},
+    		{
+    		"employer" : "WFSU-FM",
+    		"title" : "Production Assisstant",
+    		"location" : "Tallahassee, FL",
+    		"dates" : "January - July 2014",
+    		"description" : ["Ran automation software, maintained databases"]
+    		},
+    		{
+    		"employer" : "Solution Skills, Inc.",
+    		"title" : "Marketing Assisstant",
+    		"location" : "Tallahassee, FL",
+    		"dates" : "January - July 2014",
+    		"description" : ["Wrote, edited, and formatted marketing materials, strategy guides, and practice tests",
+    			"Researched and compiled information on standardized tests",
+    			"Organized and led focus groups and workshops with high-school and college aged students"]
+    		},
+    		{
+    		"employer" : "Leon County Schools",
+    		"title" : "Substitute Teacher",
+    		"location" : "Tallahassee, FL",
+    		"dates" : "January - July 2014",
+    		"description" : ["Taught large groups of students a variety of subjects",
+    			"Worked individually with students as needed",
+    			"Reported progress and specific student needs to primary teacher"]
+    		},
+    		{
+    		"employer" : "WVFS Tallahassee",
+    		"title" : "Disc Jockey",
+    		"location" : "Tallahassee, FL",
+    		"dates" : "January 2012 - December 2013",
+    		"description" : [
+    			"Wrote reviews for albums entered into catalog",
+    			"Researched, wrote, and read summaries of articles on air",
+    			"Wrote and produced station identifications"]
+    		}
+    	]
+    },
 
+    //education object
+    education: {
+    	"schools" : [
+    		{
+    		"name" : "Florida State University",
+    		"location" : "Tallahassee, FL",
+    		"major" : "Creative Writing",
+    		"degree" : "Bachelor of Arts",
+    		"dates" : "August 2009 - May 2013",
+    		"years" : 4,
+    		"description" : [
+    			"Produced sixty pages of original fiction for honors thesis",
+    			"Attended four limited access writing workshops, each of which required approval for enrollment based on writing samples"]
+    		}
+    	],
+    	"onlineCourses" : [
+    		{
+    		"title"  : "Front-End Developer",
+    		"school" : "Udacity",
+    		"dates" : 2016,
+    		"url" : "https://www.udacity.com/",
+    		"description" : [
+    			"Learned fundamentals of HTML, CSS, and Javascript",
+    			"Created a variety of original projects using fundamentals of web design"]
+    		}
+    	]
+    },
+
+    //project object
+    projects: {
+    	"projects" : [
+    	{
+    		"title" : "Work Portfolio",
+    		"dates" : 2016,
+    		"description" : "Portfolio of audio experience",
+    		"image" : "images/project01.jpg",
+    		"link" : "#"
+    	},
+    	{
+    		"title" : "Dummy Project 1",
+    		"dates" : 2016,
+    		"description" : "Stand in for later Udacity Projects",
+    		"image" : "http://lorempixel.com/250/360/cats",
+    		"link" : "#"
+    	},
+    	{
+    		"title" : "Dummy Project 2",
+    		"dates" : 2016,
+    		"description" : "Stand in for later Udacity Projects",
+    		"image" : "http://lorempixel.com/250/360/city",
+    		"link" : "#"
+    	}
+    	]
+    },
+
+    //reusable text variablesHTMLclear: '<div class="clear"></div>',
     HTMLheaderBox: '<div id="header-box"></div>',
     HTMLheaderName: '<h1 id="name">%data%</h1>',
     HTMLheaderRole: '<div>%data%</div>',
@@ -56,6 +198,62 @@ var model = {
     internationalizeButton: '<button>Internationalize</button>',
     googleMap: '<div id="map"></div>',
 
+    //Prints all resume info onto page (separate from init in case of future changes which require re-rendering)
+    render: function() {
+        //bio render
+        $("#topContacts").append(
+    		this.HTMLmobile.replace("%data%", this.bio.contacts.mobile) +
+    		this.HTMLemail.replace("%data%", this.bio.contacts.email) +
+    		this.HTMLgithub.replace("%data%", this.bio.contacts.github) +
+    		this.HTMLtwitter.replace("%data%", this.bio.contacts.twitter) +
+    		this.HTMLlocation.replace("%data%", this.bio.contacts.location)
+    		);
+    	$("#footerContacts").append(
+    		this.HTMLmobile.replace("%data%", this.bio.contacts.mobile) +
+    		this.HTMLemail.replace("%data%", this.bio.contacts.email) +
+    		this.HTMLgithub.replace("%data%", this.bio.contacts.github) +
+    		this.HTMLtwitter.replace("%data%", this.bio.contacts.twitter) +
+    		this.HTMLlocation.replace("%data%", this.bio.contacts.location)
+    		);
+    	$(this.HTMLheaderBox).insertBefore("#main");
+    	$("#header-box").append(this.HTMLheaderText);
+    	$("#header-text").append(
+    		this.HTMLheaderName.replace("%data%", this.bio.name) +
+    		this.HTMLheaderRole.replace("%data%", this.bio.role)
+    		);
+    	$("#header").append(this.HTMLwelcomeMsg.replace("%data%", this.bio.welcomeMessage));
+    	//checks for skills before printing skills header
+    	if (this.bio.skills.length > 0) {
+    		$("#bottomRow").append(this.HTMLskillsStart);
+    		for (var skill in this.bio.skills) {
+    			$("#skillsList").append(this.HTMLskills.replace("%data%", this.bio.skills[skill]));
+    		}
+    	};
+
+        //work render
+        this.work.jobs.forEach (function(job) {
+    		$("#workExperience").append(view.HTMLworkStart);
+    		$(".work-entry:last").append(view.HTMLworkLeft);
+    		$(".work-left:last").append(
+    			view.HTMLworkEmployer.replace("%data%", job.employer) +
+    			view.HTMLworkDates.replace("%data%", job.dates) +
+    			view.HTMLworkLocation.replace("%data%", job.location)
+    		);
+    		$(".work-entry:last").append(view.HTMLworkRight);
+    		$(".work-right:last").append(view.HTMLworkTitle.replace("%data%", job.title));
+            job.description.forEach (function(duty) {
+                $(".work-right:last").append(view.HTMLworkDescription.replace("%data%", duty));
+            });
+    		$("#workExperience").append(view.HTMLclear);
+    	});
+
+        //
+    }
+}
+
+var octopus = null;
+
+var model = {
     clickLocations: [],
 
     logClicks: function(x, y) {
