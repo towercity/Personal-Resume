@@ -299,10 +299,19 @@ var view = {
         		);
             });
     	}
+    },
+    init: function() {
+        this.render();
+    }
+};
+
+var octopus = {
+    init: function() {
+        view.init();
+        model.init();
+        $("#mapDiv").append(map);
     }
 }
-
-var octopus = null;
 
 var model = {
     clickLocations: [],
