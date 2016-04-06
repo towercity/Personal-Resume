@@ -228,7 +228,7 @@ var view = {
     		for (var skill in this.bio.skills) {
     			$("#skillsList").append(this.HTMLskills.replace("%data%", this.bio.skills[skill]));
     		}
-    	};
+    	}
 
         //work render
         this.work.jobs.forEach (function(job) {
@@ -247,7 +247,58 @@ var view = {
     		$("#workExperience").append(view.HTMLclear);
     	});
 
-        //
+        //education render
+        this.education.schools.forEach(function(school) {
+            $("#education").append(view.HTMLschoolStart);
+    		$(".education-entry:last").append(view.HTMLschoolLeft);
+    		$(".education-left:last").append(
+    			view.HTMLschoolName.replace("%data%", school.name) +
+    			view.HTMLschoolDates.replace("%data%", school.dates) +
+    			view.HTMLschoolLocation.replace("%data%", school.location)
+    		);
+    		$(".education-entry:last").append(view.HTMLschoolRight);
+    		$(".education-right:last").append(
+    			view.HTMLschoolDegree.replace("%data%", school.degree) +
+    			view.HTMLschoolMajor.replace("%data%", school.major)
+    		);
+            school.description.forEach(function(duty) {
+                $(".education-right:last").append(view.HTMLschoolDescription.replace("%data%", duty));
+            });
+    		$("#education").append(view.HTMLclear);
+        });
+    	if (this.education.onlineCourses) {
+            this.education.onlineCourses.forEach(function(course) {
+                $("#education").append(view.HTMLonlineClasses);
+    			$("#education").append(view.HTMLschoolStart);
+    			$(".education-entry:last").append(view.HTMLschoolLeft);
+    			$(".education-left:last").append(
+    				view.HTMLonlineSchool.replace("%data%", course.school) +
+    				view.HTMLonlineDates.replace("%data%", course.dates) +
+    				view.HTMLonlineURL.replace("%data%", course.url)
+    			);
+    			$(".education-entry:last").append(view.HTMLschoolRight);
+    			$(".education-right:last").append(
+    				view.HTMLonlineTitle.replace("%data%", course.title)
+    			);
+                course.description.forEach(function(duty) {
+                    $(".education-right:last").append(view.HTMLschoolDescription.replace("%data%", duty));
+                });
+    			$("#education").append(view.HTMLclear);
+            });
+
+            //projects render
+            this.projects.projects.forEach(function(project){
+                $("#projects").append(view.HTMLprojectStart);
+        		$(".project-entry:last").append(view.HTMLprojectImage.replace("%data%", project.image));
+        		$(".project-entry:last").append(view.HTMLprojectOverlay);
+        		$(".project-overlay:last").append(
+        			view.HTMLprojectTitle.replace("%data%", project.title) +
+        			view.HTMLprojectDates.replace("%data%", project.dates) +
+        			view.HTMLprojectDescription.replace("%data%", project.description) +
+        			view.HTMLprojectLink.replace("%data%", project.link)
+        		);
+            });
+    	}
     }
 }
 
