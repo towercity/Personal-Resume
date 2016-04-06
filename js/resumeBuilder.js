@@ -148,17 +148,17 @@ var projects = {
 //prints bio to the page
 bio.display = function() {
 	$("#topContacts").append(
-		HTMLmobile.replace("%data%", bio.contacts.mobile) + 
+		HTMLmobile.replace("%data%", bio.contacts.mobile) +
 		HTMLemail.replace("%data%", bio.contacts.email) +
-		HTMLgithub.replace("%data%", bio.contacts.github) + 
-		HTMLtwitter.replace("%data%", bio.contacts.twitter) + 
+		HTMLgithub.replace("%data%", bio.contacts.github) +
+		HTMLtwitter.replace("%data%", bio.contacts.twitter) +
 		HTMLlocation.replace("%data%", bio.contacts.location)
 		);
 	$("#footerContacts").append(
-		HTMLmobile.replace("%data%", bio.contacts.mobile) + 
+		HTMLmobile.replace("%data%", bio.contacts.mobile) +
 		HTMLemail.replace("%data%", bio.contacts.email) +
-		HTMLgithub.replace("%data%", bio.contacts.github) + 
-		HTMLtwitter.replace("%data%", bio.contacts.twitter) + 
+		HTMLgithub.replace("%data%", bio.contacts.github) +
+		HTMLtwitter.replace("%data%", bio.contacts.twitter) +
 		HTMLlocation.replace("%data%", bio.contacts.location)
 		);
 	$(HTMLheaderBox).insertBefore("#main");
@@ -191,7 +191,7 @@ work.display = function() {
 		$(".work-entry:last").append(HTMLworkRight);
 		$(".work-right:last").append(HTMLworkTitle.replace("%data%", work.jobs[job].title));
 		for (var duty in work.jobs[job].description) {
-			$(".work-right:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description[duty]));			
+			$(".work-right:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description[duty]));
 		}
 		$("#workExperience").append(HTMLclear);
 	}
@@ -203,17 +203,17 @@ education.display = function() {
 		$("#education").append(HTMLschoolStart);
 		$(".education-entry:last").append(HTMLschoolLeft);
 		$(".education-left:last").append(
-			HTMLschoolName.replace("%data%", education.schools[school].name) + 
+			HTMLschoolName.replace("%data%", education.schools[school].name) +
 			HTMLschoolDates.replace("%data%", education.schools[school].dates) +
 			HTMLschoolLocation.replace("%data%", education.schools[school].location)
 		);
 		$(".education-entry:last").append(HTMLschoolRight);
 		$(".education-right:last").append(
-			HTMLschoolDegree.replace("%data%", education.schools[school].degree) + 
+			HTMLschoolDegree.replace("%data%", education.schools[school].degree) +
 			HTMLschoolMajor.replace("%data%", education.schools[school].major)
 		);
 		for (var duty in education.schools[school].description) {
-			$(".education-right:last").append(HTMLschoolDescription.replace("%data%", education.schools[school].description[duty]));			
+			$(".education-right:last").append(HTMLschoolDescription.replace("%data%", education.schools[school].description[duty]));
 		}
 		$("#education").append(HTMLclear);
 	}
@@ -223,8 +223,8 @@ education.display = function() {
 			$("#education").append(HTMLschoolStart);
 			$(".education-entry:last").append(HTMLschoolLeft);
 			$(".education-left:last").append(
-				HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school) + 
-				HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates) + 
+				HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school) +
+				HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates) +
 				HTMLonlineURL.replace("%data%", education.onlineCourses[course].url)
 			);
 			$(".education-entry:last").append(HTMLschoolRight);
@@ -232,7 +232,7 @@ education.display = function() {
 				HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title)
 			);
 			for (var duty in education.schools[school].description) {
-				$(".education-right:last").append(HTMLschoolDescription.replace("%data%", education.onlineCourses[course].description[duty]));			
+				$(".education-right:last").append(HTMLschoolDescription.replace("%data%", education.onlineCourses[course].description[duty]));
 			}
 			$("#education").append(HTMLclear);
 		}
@@ -248,7 +248,7 @@ projects.display = function() {
 		$(".project-overlay:last").append(
 			HTMLprojectTitle.replace("%data%", projects.projects[project].title) +
 			HTMLprojectDates.replace("%data%", projects.projects[project].dates) +
-			HTMLprojectDescription.replace("%data%", projects.projects[project].description) + 
+			HTMLprojectDescription.replace("%data%", projects.projects[project].description) +
 			HTMLprojectLink.replace("%data%", projects.projects[project].link)
 		);
 	}

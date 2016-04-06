@@ -1,107 +1,85 @@
-/*
 
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
+var model = {
+    HTMLclear: '<div class="clear"></div>',
 
-Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
+    HTMLheaderBox: '<div id="header-box"></div>',
+    HTMLheaderName: '<h1 id="name">%data%</h1>',
+    HTMLheaderRole: '<div>%data%</div>',
+    HTMLheaderText: '<div id="header-text"></div>',
 
-Cameron Pittman
-*/
+    HTMLcontactGeneric: '<li class="flex-item"><span class="dark-text">%contact%</span><span class="white-text">%data%</span></li>',
+    HTMLmobile: '<li class="flex-item"><span class="dark-text">mobile</span><span class="white-text">%data%</span></li>',
+    HTMLemail: '<li class="flex-item"><span class="dark-text">email</span><span class="white-text">%data%</span></li>',
+    HTMLtwitter: '<li class="flex-item"><span class="dark-text">twitter</span><span class="white-text">%data%</span></li>',
+    HTMLgithub: '<li class="flex-item"><span class="dark-text">github</span><span class="white-text">%data%</span></li>',
+    HTMLblog: '<li class="flex-item"><span class="dark-text">blog</span><span class="white-text">%data%</span></li>',
+    HTMLlocation: '<li class="flex-item"><span class="dark-text">location</span><span class="white-text">%data%</span></li>',
 
+    HTMLwelcomeMsg: '<h2 class="center-text">Welcome!</h2><p id="welcome-message" class="row">%data%</p>',
 
-/*
-These are HTML strings. As part of the course, you'll be using JavaScript functions
-replace the %data% placeholder text you see in them.
-*/
+    HTMLskillsStart: '<div id="skills" class="col-md-3"><h2 id="skills-h3" class="left-text">Skills:</h2><ul id="skillsList"></ul>',
+    HTMLskills: '<li><span>%data%</span></li>',
 
-var HTMLclear = '<div class="clear"></div>';
+    HTMLworkStart: '<div class="work-entry row"></div>',
+    HTMLworkLeft: '<div class="work-left col-md-5"></div>',
+    HTMLworkRight: '<div class="work-right col-md-7"></div>',
+    HTMLworkEmployer: '<p>%data%</p>',
+    HTMLworkTitle: '<p>%data%</p>',
+    HTMLworkDates: '<div class="date-text">%data%</div>',
+    HTMLworkLocation: '<div class="location-text">%data%</div>',
+    HTMLworkDescription: '<li>%data%</li>',
 
-var HTMLheaderBox = '<div id="header-box"></div>';
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<div>%data%</div>';
-var HTMLheaderText = '<div id="header-text"></div>';
+    HTMLprojectStart: '<div class="col-md-4 project-container"><div class="project-entry image-wrapper overlay-fade-in"></div></div>',
+    HTMLprojectOverlay: '<div class="project-overlay image-overlay-content"></div>',
+    HTMLprojectTitle: '<h2>%data%</h2>',
+    HTMLprojectDates: '<div class="white-text">%data%</div>',
+    HTMLprojectDescription: '<p>%data%</p>',
+    HTMLprojectImage: '<img src="%data%">',
+    HTMLprojectLink: '<a href="%data%" class="button">View project</a>',
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="dark-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="dark-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="dark-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="dark-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="dark-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="dark-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="dark-text">location</span><span class="white-text">%data%</span></li>';
+    HTMLschoolStart: '<div class="education-entry row"></div>',
+    HTMLschoolLeft: '<div class="education-left col-md-5"></div>',
+    HTMLschoolRight: '<div class="education-right col-md-7"></div>',
+    HTMLschoolName: '<p>%data%</p>',
+    HTMLschoolDegree: '<p>%data%, ',
+    HTMLschoolDates: '<div class="date-text">%data%</div>',
+    HTMLschoolLocation: '<div class="location-text">%data%</div>',
+    HTMLschoolMajor: '%data%</p>',
+    HTMLschoolDescription: '<li>%data%</li>',
 
-var HTMLwelcomeMsg = '<h2 class="center-text">Welcome!</h2><p id="welcome-message" class="row">%data%</p>';
+    HTMLonlineClasses: '<h3>Online Classes</h3>',
+    HTMLonlineTitle: '<p>%data%</p>',
+    HTMLonlineSchool: '<p>%data%</p>',
+    HTMLonlineDates: '<div class="date-text">%data%</div>',
+    HTMLonlineURL: '<a href="#">%data%</a>',
 
-var HTMLskillsStart = '<div id="skills" class="col-md-3"><h2 id="skills-h3" class="left-text">Skills:</h2><ul id="skillsList"></ul>';
-var HTMLskills = '<li><span>%data%</span></li>';
+    internationalizeButton: '<button>Internationalize</button>',
+    googleMap: '<div id="map"></div>',
 
-var HTMLworkStart = '<div class="work-entry row"></div>';
-var HTMLworkLeft = '<div class="work-left col-md-5"></div>';
-var HTMLworkRight = '<div class="work-right col-md-7"></div>';
-var HTMLworkEmployer = '<p>%data%</p>';
-var HTMLworkTitle = '<p>%data%</p>';
-var HTMLworkDates = '<div class="date-text">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<li>%data%</li>';
+    clickLocations: [],
 
-var HTMLprojectStart = '<div class="col-md-4 project-container"><div class="project-entry image-wrapper overlay-fade-in"></div></div>';
-var HTMLprojectOverlay = '<div class="project-overlay image-overlay-content"></div>';
-var HTMLprojectTitle = '<h2>%data%</h2>';
-var HTMLprojectDates = '<div class="white-text">%data%</div>';
-var HTMLprojectDescription = '<p>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
-var HTMLprojectLink = '<a href="%data%" class="button">View project</a>';
+    logClicks: function(x, y) {
+        this.clickLocations.push({
+            x: x,
+            y: y
+        });
+        console.log('x location: ' + x + '; y location: ' + y);
+    },
 
-var HTMLschoolStart = '<div class="education-entry row"></div>';
-var HTMLschoolLeft = '<div class="education-left col-md-5"></div>';
-var HTMLschoolRight = '<div class="education-right col-md-7"></div>';
-var HTMLschoolName = '<p>%data%</p>';
-var HTMLschoolDegree = '<p>%data%, ';
-var HTMLschoolDates = '<div class="date-text">%data%</div>';
-var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '%data%</p>';
-var HTMLschoolDescription = '<li>%data%</li>';
+    init: function() {
+        $('button').click(function() {
+            var iName = inName() || function(){};
+            $('#name').html(iName);
+        });
 
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<p>%data%</p>';
-var HTMLonlineSchool = '<p>%data%</p>';
-var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<a href="#">%data%</a>';
+        $(document).click(function(loc) {
+            var x = loc.pageX;
+            var y = loc.pageY;
 
-var internationalizeButton = '<button>Internationalize</button>';
-var googleMap = '<div id="map"></div>';
-
-
-/*
-The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
-*/
-$(document).ready(function() {
-  $('button').click(function() {
-    var iName = inName() || function(){};
-    $('#name').html(iName);  
-  });
-});
-
-/*
-The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
-*/
-clickLocations = [];
-
-function logClicks(x,y) {
-  clickLocations.push(
-    {
-      x: x,
-      y: y
+            model.logClicks(x, y);
+        });
     }
-  );
-  console.log('x location: ' + x + '; y location: ' + y);
-}
-
-$(document).click(function(loc) {
-  var x = loc.pageX;
-  var y = loc.pageY;
-
-  logClicks(x, y);
-});
-
+};
 
 
 /*
@@ -123,9 +101,9 @@ function initializeMap() {
     disableDefaultUI: true
   };
 
-  /* 
+  /*
   For the map to be displayed, the googleMap var must be
-  appended to #mapDiv in resumeBuilder.js. 
+  appended to #mapDiv in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
@@ -144,7 +122,7 @@ function initializeMap() {
 
     // iterates through school locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
-    // as described in the Udacity FEND Style Guide: 
+    // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     education.schools.forEach(function(school){
       locations.push(school.location);
@@ -152,7 +130,7 @@ function initializeMap() {
 
     // iterates through work locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
-    // as described in the Udacity FEND Style Guide: 
+    // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     work.jobs.forEach(function(job){
       locations.push(job.location);
